@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Records</title>
+<style>
+    body {
+        background: #f2f6ff;
+        padding: 30px;
+    }
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        background: rgb(7, 231, 213);
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 5px 25px hwb(342 5% 27% / 0.1);
+    }
+    h2 {
+        text-align: center;
+        color: #0b5394;
+        margin-bottom: 5px;
+    }
+    p.subtitle {
+        text-align: center;
+        color: #b90505d0;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    thead {
+        background: #0b5394;
+        color: rgba(128, 230, 13, 0.815);
+    }
+    th {
+        padding: 14px 12px;
+        text-align: left;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+    td {
+        padding: 12px;
+        border-bottom: 1px solid #3f0418;
+        font-size: 14px;
+    }
+    tbody tr:hover {
+        background: #021d52;
+        transition: 0.2s;
+    }
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+    .status {
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        display: inline-block;
+    }
+    .admitted { background: #d4edda; color: #155724; }
+    .discharged { background: #cce5ff; color: #004085; }
+    .critical { background: #f8d7da; color: #721c24; }
+
+    @media (max-width: 700px) {
+        table, thead, tbody, th, td, tr { display: block; }
+        thead { display: none; }
+        tr { margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; }
+        td { border: none; display: flex; justify-content: space-between; }
+        td::before { content: attr(data-label); font-weight: bold; color: #0b5394; }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Patient Records Table</h2>
+    <p class="subtitle">Hospital Management System</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>Full Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Diagnosis</th>
+                <th>Doctor</th>
+                <th>Admission Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Patient ID">P-001</td>
+                <td data-label="Name">John Oteyo</td>
+                <td data-label="Age">22</td>
+                <td data-label="Gender">Male</td>
+                <td data-label="Diagnosis">Malaria</td>
+                <td data-label="Doctor">Dr. Kamau</td>
+                <td data-label="Date">2026-09-28</td>
+                <td data-label="Status"><span class="status admitted">Admitted</span></td>
+            </tr>
+            <tr>
+                <td data-label="Patient ID">P-002</td>
+                <td data-label="Name">Mary Wanjiku</td>
+                <td data-label="Age">30</td>
+                <td data-label="Gender">Female</td>
+                <td data-label="Diagnosis">Typhoid</td>
+                <td data-label="Doctor">Dr. Achieng</td>
+                <td data-label="Date">2026-09-27</td>
+                <td data-label="Status"><span class="status critical">Critical</span></td>
+            </tr>
+            <tr>
+                <td data-label="Patient ID">P-003</td>
+                <td data-label="Name">Brian Kipchoge</td>
+                <td data-label="Age">45</td>
+                <td data-label="Gender">Male</td>
+                <td data-label="Diagnosis">Fracture</td>
+                <td data-label="Doctor">Dr. Mutua</td>
+                <td data-label="Date">2026-09-25</td>
+                <td data-label="Status"><span class="status discharged">Discharged</span></td>
+            </tr>
+            <tr>
+                <td data-label="Patient ID">P-004</td>
+                <td data-label="Name">Faith Chebet</td>
+                <td data-label="Age">19</td>
+                <td data-label="Gender">Female</td>
+                <td data-label="Diagnosis">Asthma</td>
+                <td data-label="Doctor">Dr. Otieno</td>
+                <td data-label="Date">2026-09-29</td>
+                <td data-label="Status"><span class="status admitted">Admitted</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
